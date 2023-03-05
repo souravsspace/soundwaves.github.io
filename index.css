@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+:root {
+  --clr-main: rgb(23, 98, 167);
+  --clr-secondery: rgb(188, 58, 128);
+
+  --clr-main-10: rgba(23, 98, 167 , 0.1);
+  --clr-secondery-10: rgba(188, 58, 128, 0.1);
+
+  --bg-light: rgb(47, 48, 58);
+  --bg-dark: rgb(32, 32, 39);
+
+  --nav-gap: 4rem;
+
+  --padding-bg-side-inline: clamp(1rem, 10vh , 8rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: hsl(0, 0%, 100%);
+
+  overflow-x: hidden;
+}
+
+/* reset */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p, article {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 62px);
+}
+
+h2 {
+  font-size: clamp(23.5px, 5vw, 48px);
+}
+
+p {
+  font-size: 36;
+}
+
+
+/* utility class */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.space-ing {
+  width: 100%;
+  height: 7vh;
+  background-color: var(--bg-dark);
+}
+
+
+
+/* header */
+
+.header {
+  max-height: 100vh;
+  width: 100%;
+
+  padding-inline: var(--padding-bg-side-inline);
+  padding-block: 2rem;
+
+  overflow: hidden;
+
+  background-color: var(--bg-light);
+}
+
+.nav {
+  align-items: center;  
+}
+
+.nav-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0.25rem, 5vh, 0.75rem);
+
+  flex: 1;
+}
+
+.nav-logo > * {
+  cursor: pointer;
+}
+
+.nav-items {
+  gap: clamp(0.5rem, 10vh, var(--nav-gap));
+
+}
+
+.nav-items li:hover a {
+  color: hsl(0, 0%, 80%);
+}
+
+.header-body {
+  min-height: 70vh;
+  width: 100%;
+
+  margin-top: 17vh;
+
+  background-image: url(img/landing-page-girl.png);
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+
+
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+
+}
+.circle {
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  z-index: -1;
+}
+
+.circle-1 {
+  width: 260px;
+
+  background-color: var(--clr-main-10);
+
+  top: -30%;
+  left: 30%;
+}
+
+.circle-2 {
+  width: 300px;
+
+  background-color: var(--clr-secondery-10);
+
+  bottom: 8%;
+  left: -10%;
+}
+
+.circle-3 {
+  width: 600px;
+  height: 600px;
+
+  bottom: -30%;
+  right: -30%;
+
+  overflow: hidden;
+}
+
+.circle-3::before {
+  position: absolute;
+
+  content: '';
+  background-color: var(--clr-main-10);
+
+  width: 100%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+}
+
+.header--discription{
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.join--btn {
+  background-color: var(--clr-main);
+  padding-block: clamp(5px, 5vw, 10px);
+  padding-inline: clamp(15px, 5vw, 35px);
+  border-radius: 10px;
+
+  border: 2px solid var(--clr-main);
+
+  transition: border-radius 300ms ease;
+}
+
+.join--btn:hover {
+  background: transparent;
+  border: 2px solid var(--clr-main);
+
+  border-radius: 15px;
+}
+
+
+/* discover */
+
+.discover {
+  height: 100vh;
+
+  padding-inline: var(--padding-bg-side-inline);
+  padding-block: 2rem;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--bg-light);
+
+  gap: 1rem;
+}
+
+
+.discover-left-side > * {
+  margin-block: 0.5rem;
+}
+
+.discover-left-side p {
+  margin-top: 1.5rem;
+}
+
+.discover--links {
+  gap: 0.5rem;
+}
+
+.d--card {
+  background-color: var(--bg-dark);
+  text-align: center;
+
+  padding-block: clamp(0.25rem, 5vw, 0.75rem);
+  padding-inline: clamp(0.75rem, 5vw, 1.5rem);
+  border-radius: 10px;
+}
+
+.d--card img {
+  width: clamp(25px, 5vw, 40px);
+  aspect-ratio: 1;
+}
+
+.d--card p {
+  margin: 0;
+}
+
+
+.discover-right-side img {
+  width: 300px;
+}
+
+
+
+/* sign up form */
+
+.join {
+  height: 100vh;
+}
+
+.join-content {
+  background-color: var(--bg-light);
+
+  padding-block: 2rem;
+  padding-inline: var(--padding-bg-side-inline);
+
+  height: 93vh;
+
+  align-items: center;
+}
+
+.join-left-side {
+  flex: 1;
+}
+
+.join-left-side span {
+  font-size: clamp(60px, 5vw, 86px);
+  color: var(--clr-secondery);
+}
+
+.join-right-side {
+  flex-direction: column;
+  background-color: var(--bg-dark);
+
+  padding: 3.5rem 4rem;
+
+  gap: 0.75rem;
+
+  border-radius: 10px;
+}
+
+.join-right-side input {
+  outline: none;
+  border: 2px solid var(--clr-main);
+  background: transparent;
+  height: 35px;
+  line-height: 30px;
+  width: 400px;
+  padding-inline: 0.5rem;
+  padding-block: 0.4rem;
+  color: #fff;
+
+  font-size: 20px;
+
+  border-radius: 10px;
+  
+}
+
+.join-right-side a {
+  text-align: center;
+
+  margin-top: 1rem;
+}
+
+/* footer */
+.footer {
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 2rem;
+  padding-inline: var(--padding-bg-side-inline);
+
+}
+
+.footer--left, .footer--right {
+  align-items: center;
+  justify-content: center;
+
+  
+
+  gap: 4rem;
+} 
+
+.footer--left a:hover {
+  color: hsl(0, 0%, 80%);
+}
+
+.f--fb {
+  gap: 0.25rem;
+}
+
+.f--fb:hover a {
+  color: hsl(0, 0%, 80%);
+}
+
+
+/* mobile */
+
+
+@media (max-width:550px) {
+
+
+  .header , .discover, .join, .footer {
+    padding-inline: clamp(0.5rem, 10vw, 1rem);
+  }
+
+  .nav-items {
+    gap: 1rem;
+    }
+
+}
+
+@media (max-width:753px){
+  .discover {
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .discover--links, .discover-left-side {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .discover--links, .discover-left-side > * {
+    text-align: center;
+  }
+
+
+  .discover-right-side img {
+    width: 250px;
+  }
+
+  .join-content {
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+
+    gap: 10vh;
+  }
+
+  .join-left-side {
+    flex: 0;
+  }
+
+  .join-right-side {
+    margin-inline: 1rem;
+  }
+
+  .join-right-side input {
+    width: 300px;
+  }
+
+
+  .footer--left, .footer--right {
+    flex: 1;
+    gap: 0.75rem;
+  }
+
+  
+}
+
+
+
+
+
+
